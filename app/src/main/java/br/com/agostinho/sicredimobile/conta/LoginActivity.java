@@ -33,12 +33,6 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        findViewById(R.id.lbl_login_novo_usuario).setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), ContaFormularioActivity.class));
             }
         });
 
