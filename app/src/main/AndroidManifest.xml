@@ -15,7 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="br.com.agostinho.sicredimobile.main.PrincipalActivity"></activity>
+        <activity android:name="br.com.agostinho.sicredimobile.main.PrincipalActivity" />
+        <activity
+            android:name="br.com.agostinho.sicredimobile.conta.ContaFormularioActivity"
+            android:label="@string/title_activity_conta_formulario"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

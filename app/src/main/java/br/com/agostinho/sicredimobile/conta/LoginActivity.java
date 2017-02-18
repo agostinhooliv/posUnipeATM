@@ -1,5 +1,6 @@
 package br.com.agostinho.sicredimobile.conta;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,29 +25,23 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        campoLogin = (EditText) findViewById(R.id.campoLoginId);
-        campoSenha = (EditText) findViewById(R.id.campoSenhaId);
-        botaoLogin = (Button) findViewById(R.id.botaoLoginId);
+        findViewById(R.id.btn_login_login).setOnClickListener(new View.OnClickListener(){
 
-        //Ação Botão Login
-        botaoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                cliente.setLogin(campoLogin.getText().toString());
-                cliente.setSenha(campoSenha.getText().toString());
-                Intent intent;
-
-                if(!cliente.getLogin().equals("agostinhooliv") || !cliente.getSenha().equals("1234")){
-                    alert("Login ou Senha inválidos!");
-                    System.out.println("Login: "+cliente.getLogin().equals("agostinhooliv") +"\tSenha: "+cliente.getSenha().equals("1234"));
-                } else {
-                    intent = new Intent(LoginActivity.this, PrincipalActivity.class);
-                    intent.putExtra("cliente", cliente.getClass());
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(getContext(), PrincipalActivity.class);
+                startActivity(intent);
             }
         });
+            }
+        });
+
+        findViewById(R.id.lbl_login_esqueci_minha_senha);
+
+    }
+
+    Context getContext(){
+        return this;
     }
 
     private void alert(String mensagem){
