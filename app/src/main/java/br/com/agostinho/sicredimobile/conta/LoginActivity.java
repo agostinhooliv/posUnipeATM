@@ -35,12 +35,15 @@ public class LoginActivity extends AppCompatActivity {
 
                 cliente.setLogin(campoLogin.getText().toString());
                 cliente.setSenha(campoSenha.getText().toString());
+                Intent intent;
 
                 if(!cliente.getLogin().equals("agostinhooliv") || !cliente.getSenha().equals("1234")){
                     alert("Login ou Senha inválidos!");
                     System.out.println("Login: "+cliente.getLogin().equals("agostinhooliv") +"\tSenha: "+cliente.getSenha().equals("1234"));
                 } else {
-                    startActivity(new Intent(LoginActivity.this, PrincipalActivity.class));
+                    intent = new Intent(LoginActivity.this, PrincipalActivity.class);
+                    intent.putExtra("cliente", cliente.getClass());
+                    startActivity(intent);
                 }
             }
         });

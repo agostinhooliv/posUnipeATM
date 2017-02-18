@@ -5,11 +5,10 @@ import br.com.agostinho.sicredimobile.usuario.Cliente;
 
 public class Conta {
 
-    private double saldo;
+    private double saldo = 1000.00;
     private int numeroConta;
     //Composição
     private Cliente titular;
-    private TipoTransacao tipoTransacao;
 
     private static int contador = 1000;
 
@@ -66,13 +65,5 @@ public class Conta {
      */
     public void setTitular(Cliente titular) {
         this.titular = titular;
-    }
-
-    public TipoTransacao getTipoTransacao() {
-        return tipoTransacao;
-    }
-
-    public void setTipoTransacao(TipoTransacao tipoTransacao) {
-        this.tipoTransacao = tipoTransacao;
     }
 }
