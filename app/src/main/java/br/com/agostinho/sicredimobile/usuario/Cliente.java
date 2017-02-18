@@ -1,4 +1,4 @@
-package cliente;
+package br.com.agostinho.sicredimobile.usuario;
 
 /**
  *

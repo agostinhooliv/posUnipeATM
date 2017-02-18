@@ -1,6 +1,7 @@
-package conta;
+package br.com.agostinho.sicredimobile.conta;
 
-import cliente.Cliente;
+import br.com.agostinho.sicredimobile.transacao.TipoTransacao;
+import br.com.agostinho.sicredimobile.usuario.Cliente;
 
 public class Conta {
 
@@ -8,6 +9,7 @@ public class Conta {
     private int numeroConta;
     //Composição
     private Cliente titular;
+    private TipoTransacao tipoTransacao;
 
     private static int contador = 1000;
 
@@ -64,5 +66,13 @@ public class Conta {
      */
     public void setTitular(Cliente titular) {
         this.titular = titular;
+    }
+
+    public TipoTransacao getTipoTransacao() {
+        return tipoTransacao;
+    }
+
+    public void setTipoTransacao(TipoTransacao tipoTransacao) {
+        this.tipoTransacao = tipoTransacao;
     }
 }

@@ -1,7 +1,9 @@
-package agostinho.com.br.sicredimobile;
+package br.com.agostinho.sicredimobile.main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import agostinho.com.br.sicredimobile.R;
 
 public class PrincipalActivity extends AppCompatActivity {
 
