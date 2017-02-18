@@ -17,12 +17,7 @@ public class PrincipalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        Intent intent = new Intent(PrincipalActivity.this, LoginActivity.class);
-        Bundle bundle = intent.getExtras();
+        
 
-        Cliente cliente = (Cliente) intent.getSerializableExtra("cliente");
-        System.out.println("Nome: "+cliente.getNome());
-        TextView contaLabel = (TextView) findViewById(R.id.contaLabel);
-        contaLabel.setText(cliente.getNome());
     }
 }

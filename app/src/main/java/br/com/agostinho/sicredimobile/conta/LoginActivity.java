@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        findViewById(R.id.btn_login_login).setOnClickListener(new View.OnClickListener(){
+        findViewById(R.id.btn_login_login).setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -33,18 +33,14 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-            }
-        });
-
-        findViewById(R.id.lbl_login_esqueci_minha_senha);
-
     }
 
-    Context getContext(){
+
+    Context getContext() {
         return this;
     }
 
-    private void alert(String mensagem){
+    private void alert(String mensagem) {
         Toast.makeText(this, mensagem, Toast.LENGTH_LONG).show();
     }
 }
