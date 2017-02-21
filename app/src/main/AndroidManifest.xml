@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="agostinho.com.br.sicredimobile">
+    package="br.com.agostinho.sicredimobile">
 
     <application
         android:allowBackup="true"
@@ -20,7 +20,7 @@
             android:name="br.com.agostinho.sicredimobile.conta.ContaFormularioActivity"
             android:label="@string/title_activity_conta_formulario"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="br.com.agostinho.sicredimobile.transacao.ExtratoActiviy"></activity>
+        <activity android:name="br.com.agostinho.sicredimobile.transacao.ExtratoActivity"></activity>
     </application>
 
 </manifest>

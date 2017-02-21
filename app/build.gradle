@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "agostinho.com.br.sicredimobile"
+        applicationId "agostinho.com.br.br.com.agostinho.sicredimobile"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1

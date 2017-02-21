@@ -1,4 +1,4 @@
-package agostinho.com.br.sicredimobile;
+package br.com.agostinho.sicredimobile;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("agostinho.com.br.sicredimobile", appContext.getPackageName());
+        assertEquals("agostinho.com.br.br.com.agostinho.sicredimobile", appContext.getPackageName());
     }
 }
