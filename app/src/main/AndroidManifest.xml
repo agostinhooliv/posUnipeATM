@@ -19,7 +19,8 @@
         <activity
             android:name="br.com.agostinho.sicredimobile.conta.ContaFormularioActivity"
             android:label="@string/title_activity_conta_formulario"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="br.com.agostinho.sicredimobile.transacao.ExtratoActiviy"></activity>
     </application>
 
 </manifest>
