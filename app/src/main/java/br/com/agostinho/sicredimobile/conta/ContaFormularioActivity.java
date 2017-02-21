@@ -1,21 +1,19 @@
 package br.com.agostinho.sicredimobile.conta;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
 
 import br.com.agostinho.sicredimobile.R;
+import br.com.agostinho.sicredimobile.util.BaseActivity;
 
-
-public class ContaFormularioActivity extends AppCompatActivity {
+public class ContaFormularioActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_conta_formulario);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        setContentView(R.layout.activity_formulario_conta);
+        setUpToolbar();
+        setTitleToolbar("Cadastre-se");
+        setDisplayHomeAsUpEnabled(true);
     }
-
 }
