@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.agostinho.sicredimobile.R;
+import br.com.agostinho.sicredimobile.conta.ContaFormularioActivity;
 import br.com.agostinho.sicredimobile.main.PrincipalActivity;
 import br.com.agostinho.sicredimobile.usuario.Cliente;
 
@@ -25,22 +26,39 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        findViewById(R.id.btn_login_login).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_login_login).setOnClickListener(getHandleLogin());
+        findViewById(R.id.lbl_login_novo_usuario).setOnClickListener(getHandleNovoUsuario());
+    }
+
+
+
+    private Context getContext() {
+        return this;
+    }
+
+    private void alert(String mensagem) {
+        Toast.makeText(this, mensagem, Toast.LENGTH_LONG).show();
+    }
+
+    /* Handles */
+    View.OnClickListener getHandleLogin(){
+        return new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), PrincipalActivity.class);
                 startActivity(intent);
             }
-        });
+        };
     }
 
-
-    Context getContext() {
-        return this;
-    }
-
-    private void alert(String mensagem) {
-        Toast.makeText(this, mensagem, Toast.LENGTH_LONG).show();
+    public View.OnClickListener getHandleNovoUsuario() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ContaFormularioActivity.class);
+                startActivity(intent);
+            }
+        };
     }
 }
