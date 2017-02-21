@@ -7,7 +7,7 @@ import br.com.agostinho.sicredimobile.usuario.ClienteDAO;
  * Created by agostinhooliv on 18/02/17.
  */
 
-public class ClienteService {
+public class ContaService {
 
     ClienteDAO clienteDAO = new ClienteDAO();
 

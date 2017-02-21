@@ -1,14 +1,10 @@
 package br.com.agostinho.sicredimobile.main;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
-import android.widget.TextView;
 
-import agostinho.com.br.sicredimobile.R;
-import br.com.agostinho.sicredimobile.conta.LoginActivity;
-import br.com.agostinho.sicredimobile.usuario.Cliente;
+import br.com.agostinho.sicredimobile.R;
+
 
 public class PrincipalActivity extends AppCompatActivity {
 

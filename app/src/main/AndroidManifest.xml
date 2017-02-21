@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="agostinho.com.br.sicredimobile">
+    package="br.com.agostinho.sicredimobile">
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="br.com.agostinho.sicredimobile.conta.LoginActivity">
+        <activity android:name="br.com.agostinho.sicredimobile.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +20,7 @@
             android:name="br.com.agostinho.sicredimobile.conta.ContaFormularioActivity"
             android:label="@string/title_activity_conta_formulario"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="br.com.agostinho.sicredimobile.transacao.ExtratoActiviy"></activity>
+        <activity android:name="br.com.agostinho.sicredimobile.transacao.ExtratoActivity"></activity>
     </application>
 
 </manifest>

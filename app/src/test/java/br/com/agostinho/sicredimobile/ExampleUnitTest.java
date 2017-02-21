@@ -1,4 +1,4 @@
-package agostinho.com.br.sicredimobile;
+package br.com.agostinho.sicredimobile;
 
 import org.junit.Test;
 

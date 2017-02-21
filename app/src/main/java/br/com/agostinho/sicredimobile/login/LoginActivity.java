@@ -1,4 +1,4 @@
-package br.com.agostinho.sicredimobile.conta;
+package br.com.agostinho.sicredimobile.login;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import br.com.agostinho.sicredimobile.R;
 import br.com.agostinho.sicredimobile.main.PrincipalActivity;
-import agostinho.com.br.sicredimobile.R;
 import br.com.agostinho.sicredimobile.usuario.Cliente;
 
 public class LoginActivity extends AppCompatActivity {

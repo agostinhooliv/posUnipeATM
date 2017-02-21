@@ -1,9 +1,10 @@
 package br.com.agostinho.sicredimobile.transacao;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import agostinho.com.br.sicredimobile.R;
+import br.com.agostinho.sicredimobile.R;
+
 
 public class SaldoActivity extends AppCompatActivity {
 
