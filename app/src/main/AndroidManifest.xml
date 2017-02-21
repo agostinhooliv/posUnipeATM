@@ -18,7 +18,8 @@
         <activity android:name=".main.PrincipalActivity" />
         <activity android:name=".transacao.ExtratoActivity" />
         <activity android:name=".transacao.DepositoActivity" />
-        <activity android:name=".conta.ContaFormularioActivity"></activity>
+        <activity android:name=".conta.ContaFormularioActivity" />
+        <activity android:name=".transacao.SaqueActivity"></activity>
     </application>
 
 </manifest>
