@@ -1,4 +1,4 @@
-package br.com.agostinho.sicredimobile.conta;
+package br.com.agostinho.sicredimobile.login;
 
 import android.content.Context;
 import android.content.Intent;
