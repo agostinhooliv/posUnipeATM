@@ -17,7 +17,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_logo_local_atm"
+        app:srcCompat="@drawable/logo"
         android:id="@+id/imageView4"
         android:layout_weight="0.88" />
 
