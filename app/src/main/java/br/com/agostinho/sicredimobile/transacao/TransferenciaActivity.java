@@ -6,16 +6,15 @@ import android.os.Bundle;
 import br.com.agostinho.sicredimobile.R;
 import br.com.agostinho.sicredimobile.util.BaseActivity;
 
-public class DepositoActivity extends BaseActivity {
+public class TransferenciaActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deposito);
+        setContentView(R.layout.activity_transferencia);
 
         setUpToolbar();
-        setTitleToolbar("Deposito");
+        setTitleToolbar("Transferencia");
         setDisplayHomeAsUpEnabled(true);
-
     }
 }

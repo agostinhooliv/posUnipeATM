@@ -19,7 +19,7 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:gravity="center_vertical|center_horizontal"
-            android:text="Dados do Deposito"
+            android:text="Dados do Saque"
             android:textSize="16dp" />
 
         <TableLayout
@@ -53,7 +53,8 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_span="2" />
+                    android:layout_span="2"
+                    android:enabled="false"/>
 
             </TableRow>
 

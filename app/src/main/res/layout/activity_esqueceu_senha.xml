@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="br.com.agostinho.sicredimobile.transacao.DepositoActivity">
+    tools:context="br.com.agostinho.sicredimobile.conta.EsqueceuSenhaActivity">
 
     <include layout="@layout/include_toolbar" />
 
@@ -19,7 +19,7 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:gravity="center_vertical|center_horizontal"
-            android:text="Dados do Deposito"
+            android:text="Informe seu e-mail"
             android:textSize="16dp" />
 
         <TableLayout
@@ -34,45 +34,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Usuario: " />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Usuario: " />
-
-            </TableRow>
-
-            <TableRow android:padding="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Conta: " />
+                    android:text="E-mail: " />
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_span="2" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Valor: " />
-
-                <EditText
-                    android:id="@+id/editText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_span="2" />
-
 
             </TableRow>
 

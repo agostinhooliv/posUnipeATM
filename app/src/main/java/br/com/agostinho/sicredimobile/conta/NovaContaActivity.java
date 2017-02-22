@@ -1,21 +1,18 @@
-package br.com.agostinho.sicredimobile.transacao;
+package br.com.agostinho.sicredimobile.conta;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import br.com.agostinho.sicredimobile.R;
 import br.com.agostinho.sicredimobile.util.BaseActivity;
 
-public class DepositoActivity extends BaseActivity {
+public class NovaContaActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deposito);
-
+        setContentView(R.layout.activity_nova_conta);
         setUpToolbar();
-        setTitleToolbar("Deposito");
+        setTitleToolbar("Cadastre-se");
         setDisplayHomeAsUpEnabled(true);
-
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="br.com.agostinho.sicredimobile.transacao.DepositoActivity">
+    tools:context="br.com.agostinho.sicredimobile.transacao.TransferenciaActivity">
 
     <include layout="@layout/include_toolbar" />
 
@@ -19,7 +19,7 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:gravity="center_vertical|center_horizontal"
-            android:text="Dados do Deposito"
+            android:text="Dados da Transferencia"
             android:textSize="16dp" />
 
         <TableLayout
@@ -86,6 +86,7 @@
 
             </TableRow>
         </TableLayout>
+
 
     </LinearLayout>
 
