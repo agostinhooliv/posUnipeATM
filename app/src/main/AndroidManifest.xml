@@ -22,7 +22,8 @@
         <activity android:name=".transacao.ExtratoActivity" />
         <activity android:name=".transacao.DepositoActivity" />
         <activity android:name=".transacao.SaqueActivity" />
-        <activity android:name=".transacao.TransferenciaActivity"></activity>
+        <activity android:name=".transacao.TransferenciaActivity" />
+        <activity android:name=".conta.EsqueceuSenhaActivity"></activity>
     </application>
 
 </manifest>
