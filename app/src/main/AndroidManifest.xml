@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".conta.ContaFormularioActivity" />
+        <activity android:name=".conta.NovaContaActivity" />
         <activity android:name=".main.PrincipalActivity" />
         <activity android:name=".transacao.SaldoActivity" />
         <activity android:name=".transacao.ExtratoActivity" />
