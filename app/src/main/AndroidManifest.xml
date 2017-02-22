@@ -21,7 +21,8 @@
         <activity android:name=".transacao.SaldoActivity" />
         <activity android:name=".transacao.ExtratoActivity" />
         <activity android:name=".transacao.DepositoActivity" />
-        <activity android:name=".transacao.SaqueActivity"></activity>
+        <activity android:name=".transacao.SaqueActivity" />
+        <activity android:name=".transacao.TransferenciaActivity"></activity>
     </application>
 
 </manifest>

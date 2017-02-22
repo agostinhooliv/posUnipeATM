@@ -10,6 +10,7 @@ import br.com.agostinho.sicredimobile.transacao.DepositoActivity;
 import br.com.agostinho.sicredimobile.transacao.ExtratoActivity;
 import br.com.agostinho.sicredimobile.transacao.SaldoActivity;
 import br.com.agostinho.sicredimobile.transacao.SaqueActivity;
+import br.com.agostinho.sicredimobile.transacao.TransferenciaActivity;
 import br.com.agostinho.sicredimobile.util.BaseActivity;
 
 
@@ -78,7 +79,7 @@ public class PrincipalActivity extends BaseActivity {
 
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(PrincipalActivity.this, TransferenciaActivity.class));
             }
         };
     }
