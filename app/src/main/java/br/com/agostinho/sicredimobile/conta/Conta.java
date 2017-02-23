@@ -1,69 +1,82 @@
 package br.com.agostinho.sicredimobile.conta;
 
-import br.com.agostinho.sicredimobile.transacao.TipoTransacao;
-import br.com.agostinho.sicredimobile.usuario.Cliente;
+import br.com.agostinho.sicredimobile.cliente.Cliente;
+import br.com.agostinho.sicredimobile.util.BaseEntity;
 
-public class Conta {
+public class Conta extends BaseEntity<Integer>{
 
-    private double saldo = 1000.00;
-    private int numeroConta;
-    //Composição
+    private static int proxId = 1;
+
+    private String conta;
+    private String senha;
+    private double saldo;
     private Cliente titular;
 
-    private static int contador = 1000;
-
-    public Conta(double saldo, Cliente titular) {
-        this.numeroConta = Conta.contador++;
-        this.saldo = saldo;
-        this.titular = titular;
+    public String getConta() {
+        return conta;
     }
 
-    public Conta(int numeroConta) {
-        this.numeroConta = numeroConta;
+    public void setConta(String conta) {
+        this.conta = conta;
     }
 
-    public Conta() {
-    }
-
-    /**
-     * @return the saldo
-     */
     public double getSaldo() {
         return saldo;
     }
 
-    /**
-     * @param saldo the saldo to set
-     */
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
-    /**
-     * @return the numeroConta
-     */
-    public int getNumeroConta() {
-        return numeroConta;
-    }
-
-    /**
-     * @param numeroConta the numeroConta to set
-     */
-    public void setNumeroConta(int numeroConta) {
-        this.numeroConta = numeroConta;
-    }
-
-    /**
-     * @return the titular
-     */
     public Cliente getTitular() {
         return titular;
     }
 
-    /**
-     * @param titular the titular to set
-     */
     public void setTitular(Cliente titular) {
         this.titular = titular;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "conta='" + conta + '\'' +
+                ", senha='" + senha + '\'' +
+                ", saldo=" + saldo +
+                ", titular=" + titular +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Conta conta1 = (Conta) o;
+
+        return conta != null ? conta.equals(conta1.conta) : conta1.conta == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return conta != null ? conta.hashCode() : 0;
+    }
+
+    public Conta(String conta, double saldo, Cliente titular) {
+        this.conta = conta;
+        this.saldo = saldo;
+        this.titular = titular;
+    }
+
+    public Conta() {
+        super.setId(this.proxId++);
     }
 }

@@ -7,7 +7,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import br.com.agostinho.sicredimobile.R;
-import br.com.agostinho.sicredimobile.login.LoginActivity;
 
 /**
  * Created by breno on 21/02/17.

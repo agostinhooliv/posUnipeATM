@@ -1,4 +1,4 @@
-package br.com.agostinho.sicredimobile.transacao;
+package br.com.agostinho.sicredimobile.activites;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

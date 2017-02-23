@@ -1,37 +1,19 @@
 package br.com.agostinho.sicredimobile.transacao;
 
 import br.com.agostinho.sicredimobile.conta.Conta;
+import br.com.agostinho.sicredimobile.util.BaseEntity;
 
 /**
  * Created by agostinhooliv on 18/02/17.
  */
 
-public class Transacao {
+public class Transacao extends BaseEntity<Integer> {
 
-    private int identificacao;
+    private static int proxId = 1;
+
     private double valor;
     private TipoTransacao tipoTransacao;
     private Conta conta;
-
-    private static int contador = 1;
-
-    public Transacao(Double valor, TipoTransacao tipoTransacao, Conta conta){
-        this.identificacao = Transacao.contador++;
-        this.valor = valor;
-        this.tipoTransacao = tipoTransacao;
-        this.conta = conta;
-    }
-
-    public Transacao(){
-    }
-
-    public int getIdentificacao() {
-        return identificacao;
-    }
-
-    public void setIdentificacao(int identificacao) {
-        this.identificacao = identificacao;
-    }
 
     public double getValor() {
         return valor;
@@ -54,6 +36,21 @@ public class Transacao {
     }
 
     public void setConta(Conta conta) {
+        this.conta = conta;
+    }
+
+    @Override
+    public String toString() {
+        return "Transacao{" +
+                "valor=" + valor +
+                ", tipoTransacao=" + tipoTransacao +
+                ", conta=" + conta +
+                '}';
+    }
+
+    public Transacao(double valor, TipoTransacao tipoTransacao, Conta conta) {
+        this.valor = valor;
+        this.tipoTransacao = tipoTransacao;
         this.conta = conta;
     }
 }

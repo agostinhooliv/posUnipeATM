@@ -1,21 +1,18 @@
-package br.com.agostinho.sicredimobile.transacao;
+package br.com.agostinho.sicredimobile.activites;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import br.com.agostinho.sicredimobile.R;
 import br.com.agostinho.sicredimobile.util.BaseActivity;
 
-
-public class ExtratoActivity extends BaseActivity{
+public class NovaContaActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_extrato);
-
+        setContentView(R.layout.activity_nova_conta);
         setUpToolbar();
-        setTitleToolbar("Extrato");
+        setTitleToolbar("Cadastre-se");
         setDisplayHomeAsUpEnabled(true);
     }
 }

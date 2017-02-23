@@ -9,21 +9,21 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".login.LoginActivity">
+        <activity android:name=".activites.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".conta.NovaContaActivity" />
-        <activity android:name=".main.PrincipalActivity" />
-        <activity android:name=".transacao.SaldoActivity" />
-        <activity android:name=".transacao.ExtratoActivity" />
-        <activity android:name=".transacao.DepositoActivity" />
-        <activity android:name=".transacao.SaqueActivity" />
-        <activity android:name=".transacao.TransferenciaActivity" />
-        <activity android:name=".conta.EsqueceuSenhaActivity"></activity>
+        <activity android:name=".activites.NovaContaActivity" />
+        <activity android:name=".activites.PrincipalActivity" />
+        <activity android:name=".activites.SaldoActivity" />
+        <activity android:name=".activites.ExtratoActivity" />
+        <activity android:name=".activites.DepositoActivity" />
+        <activity android:name=".activites.SaqueActivity" />
+        <activity android:name=".activites.TransferenciaActivity" />
+        <activity android:name=".activites.EsqueceuSenhaActivity"></activity>
     </application>
 
 </manifest>

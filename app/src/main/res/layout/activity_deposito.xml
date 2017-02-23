@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="br.com.agostinho.sicredimobile.transacao.DepositoActivity">
+    tools:context="br.com.agostinho.sicredimobile.activites.DepositoActivity">
 
     <include layout="@layout/include_toolbar" />
 
@@ -37,9 +37,10 @@
                     android:text="Usuario: " />
 
                 <TextView
+                    android:id="@+id/lbl_deposito_nome_depositante"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Usuario: " />
+                    android:text="Nome Depositante" />
 
             </TableRow>
 
@@ -51,6 +52,7 @@
                     android:text="Conta: " />
 
                 <EditText
+                    android:id="@+id/edt_deposito_conta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_span="2" />
@@ -68,7 +70,7 @@
                     android:text="Valor: " />
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/edt_deposito_valor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_span="2" />
@@ -79,6 +81,7 @@
             <TableRow>
 
                 <Button
+                    android:id="@+id/btn_deposito_enviar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_span="4"

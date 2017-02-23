@@ -3,10 +3,13 @@ package br.com.agostinho.sicredimobile.util;
 import android.app.Application;
 import android.util.Log;
 
+import br.com.agostinho.sicredimobile.cliente.ClienteDAO;
+import br.com.agostinho.sicredimobile.conta.ContaDAO;
 import br.com.agostinho.sicredimobile.conta.ContaService;
 import br.com.agostinho.sicredimobile.login.LoginService;
+import br.com.agostinho.sicredimobile.transacao.TransacaoDAO;
 import br.com.agostinho.sicredimobile.transacao.TransacaoService;
-import br.com.agostinho.sicredimobile.usuario.UsuarioService;
+import br.com.agostinho.sicredimobile.cliente.ClienteService;
 
 /**
  * Created by breno on 21/02/17.
@@ -19,25 +22,9 @@ public class BaseApplication extends Application {
     private static ContaService contaService = null;
     private static TransacaoService transacaoService = null;
     private static LoginService loginService = null;
-    private static UsuarioService usuarioService = null;
+    private static ClienteService clienteService = null;
 
     public static BaseApplication getInstance() {
-        if (transacaoService == null) {
-            transacaoService = new TransacaoService();
-        }
-
-        if (contaService == null) {
-            contaService = new ContaService();
-        }
-
-        if (loginService == null) {
-            loginService = new LoginService();
-        }
-
-        if (usuarioService == null) {
-            usuarioService = new UsuarioService();
-        }
-
         return instance;
     }
 
@@ -56,18 +43,36 @@ public class BaseApplication extends Application {
     }
 
     public static ContaService getContaService() {
+        if (contaService == null) {
+            contaService = new ContaService(new ContaDAO());
+        }
+
         return contaService;
     }
 
     public static TransacaoService getTransacaoService() {
+        if (transacaoService == null) {
+            transacaoService = new TransacaoService(new TransacaoDAO());
+        }
+
         return transacaoService;
     }
 
     public static LoginService getLoginService() {
+
+        if (loginService == null) {
+            loginService = new LoginService();
+        }
+
         return loginService;
     }
 
-    public static UsuarioService getUsuarioService() {
-        return usuarioService;
+    public static ClienteService getClienteService() {
+
+        if(clienteService == null){
+            clienteService = new ClienteService(new ClienteDAO());
+        }
+
+        return clienteService;
     }
 }
