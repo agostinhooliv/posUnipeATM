@@ -15,6 +15,129 @@
         android:orientation="vertical">
 
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="SALDO CONTA CORRENTE"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="8488474-x"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:stretchColumns="1,2">
+
+            <TableRow
+                android:layout_marginTop="10dp"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Saldo em 23/02/2017" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="130dp"
+                    android:text="R$ 1.000,00" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="10dp"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Limite de crédito" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="130dp"
+                    android:text="R$ 1.000,00" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="10dp"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Disponível para Saque" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="130dp"
+                    android:text="R$ 1.000,00" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="20dp"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chq Esp - IOF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:text="R$ 10,00"
+                    android:textColor="#8B0000" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="20dp"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chq Esp - JUROS" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:text="R$ 10,00"
+                    android:textColor="#8B0000" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="10dp"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chq Esp - Vencimento" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="128dp"
+                    android:text="31/01/2020" />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
 
 </LinearLayout>
