@@ -52,5 +52,14 @@ public class ContaDAO extends AbstractDAO<Conta, Integer> {
         Conta conta = new Conta(1000.00, 1000.00, 23.99, 33.88, calendar.getTime(), cliente, "asdf");
 
         super.getRepostorio().add(conta);
+
+        calendar.set(1960, 01, 01);
+        Cliente cliente2 = new Cliente("João da Silva", "54321", "54321", calendar.getTime());
+
+        calendar.set(2030, 9, 01);
+        Conta conta2 = new Conta(1000.00, 1000.00, 0.00, 1.88, calendar.getTime(), cliente2, "qwer");
+        System.out.println("Conta2: " +conta2.getConta());
+
+        super.getRepostorio().add(conta2);
     }
 }

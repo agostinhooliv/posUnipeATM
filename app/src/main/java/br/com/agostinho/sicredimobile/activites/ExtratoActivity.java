@@ -47,11 +47,11 @@ public class ExtratoActivity extends BaseActivity {
         numeroContaCorrente = (TextView) findViewById(R.id.valorNumeroContaCorrenteId);
         numeroContaCorrente.setText(conta.getConta());
 
-        transacaoService.carregaTransacoesDefault(conta);
+        transacaoService.carregaTransacoesDefault();
 
         List<String> listaTransacoes = new ArrayList<String>();
 
-        System.out.println("Lista: " +transacaoService.consultarExtrato(conta).size());
+        System.out.println("Conta: " +conta.getConta());
 
         for(Transacao transacao : transacaoService.consultarExtrato(conta)){
             listaTransacoes.add(transacao.getTipoTransacao() + " - " +decimalFormat.format(transacao.getValor()) +" - "+simpleDateFormat.format(transacao.getDataTransacao()));

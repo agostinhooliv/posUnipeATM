@@ -118,9 +118,12 @@ public class Conta extends BaseEntity<Integer> implements Serializable {
         this.vencimentoChequeEspecial = vencimentoChequeEspecial;
         this.titular = titular;
         this.senha = senha;
-        super.setId(this.proxId++);
+        super.setId(this.proxId);
     }
 
-    public Conta() {
+    public Conta(String conta) {
+        this.conta = conta;
     }
+
+    public Conta(){}
 }
