@@ -2,29 +2,15 @@ package br.com.agostinho.sicredimobile.cliente;
 
 import br.com.agostinho.sicredimobile.conta.Conta;
 import br.com.agostinho.sicredimobile.conta.ContaDAO;
+import br.com.agostinho.sicredimobile.util.AbstractService;
 
 /**
  * Created by agostinhooliv on 18/02/17.
  */
 
-public class ClienteService {
+public class ClienteService extends AbstractService<ClienteDAO, Cliente, Integer>{
 
-    ContaDAO contaDAO = new ContaDAO();
-
-    public void addConta(Conta conta) {
-        contaDAO.cadastrar(conta);
-    }
-
-    public void removeCliente(Conta conta) {
-        contaDAO.deletar(conta);
-    }
-
-    public void updateCliente(Conta conta) {
-        contaDAO.atualizar(conta);
-    }
-
-    public Conta findContaById(Conta conta) {
-
-        return null;
+    public ClienteService(ClienteDAO dao) {
+        super(dao);
     }
 }
