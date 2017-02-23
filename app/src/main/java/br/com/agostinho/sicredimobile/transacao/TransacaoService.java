@@ -48,11 +48,26 @@ public class TransacaoService extends AbstractService<TransacaoDAO, Transacao, I
         super.add(transacao);
     }
 
+    public void sacar(String conta, Double valor){
+        ContaService contaService = BaseApplication.getInstance().getContaService();
+        Conta busca = contaService.findConta(conta);
+
+        this.sacar(busca, valor);
+    }
+
     public void transferir(Conta contaOrigem, Conta contaDestino, Double valor){
         contaOrigem.setSaldo(contaOrigem.getSaldo() - valor);
         contaDestino.setSaldo(contaDestino.getSaldo() + valor);
 
         Transacao transacao = new Transacao(valor, TipoTransacao.TRANSFERENCIA, contaOrigem);
         super.add(transacao);
+    }
+
+    public void transferir(String contaOrigem, String contaDestino, Double valor){
+        ContaService contaService = BaseApplication.getInstance().getContaService();
+        Conta cOrigem = contaService.findConta(contaOrigem);
+        Conta cDestino = contaService.findConta(contaDestino);
+
+        this.transferir(cOrigem, cDestino, valor);
     }
 }

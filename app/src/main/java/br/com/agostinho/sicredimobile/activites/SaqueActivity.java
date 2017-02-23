@@ -44,13 +44,11 @@ public class SaqueActivity extends BaseActivity {
             public void onClick(View v) {
                 EditText campoValor = (EditText) findViewById(R.id.edt_saque_valor);
 
+                String conta = loginService.getContaLogada().getConta();
                 String valor = campoValor.getText().toString();
                 double parse = Double.parseDouble(valor);
 
-                Log.i("SaqueActivity","Saldo: "+loginService.getContaLogada().getSaldo());
-                transacaoService.sacar(loginService.getContaLogada(), parse);
-                Log.i("SaqueActivity","Saldo: "+loginService.getContaLogada().getSaldo());
-
+                transacaoService.sacar(conta, parse);
                 onBackPressed();
             }
         };

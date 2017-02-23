@@ -39,7 +39,27 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Usuario: " />
+                    android:text="Usuario "
+                    android:id="@+id/lbl_transferencia_usuario" />
+
+            </TableRow>
+
+            <TableRow android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                android:paddingEnd="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Conta: " />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Conta "
+                    android:id="@+id/lbl_transferencia_conta" />
 
             </TableRow>
 
@@ -53,7 +73,9 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_span="2" />
+                    android:inputType="number"
+                    android:layout_span="2"
+                    android:id="@+id/edt_transferencia_conta" />
 
             </TableRow>
 
@@ -68,10 +90,11 @@
                     android:text="Valor: " />
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/edt_transferencia_valor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_span="2" />
+                    android:layout_span="2"
+                    android:inputType="numberDecimal"/>
 
 
             </TableRow>
@@ -82,7 +105,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_span="4"
-                    android:text="Enviar" />
+                    android:text="Enviar"
+                    android:id="@+id/btn_transferencia_enviar" />
 
             </TableRow>
         </TableLayout>
