@@ -1,72 +1,85 @@
 package br.com.agostinho.sicredimobile.cliente;
 
+import br.com.agostinho.sicredimobile.util.BaseEntity;
+
 /**
- *
  * @author agostinhooliv
  */
-public class Cliente {
+public class Cliente extends BaseEntity<Integer> {
 
-    private String cpf;
+    private static int proxId = 1;
+
     private String nome;
+    private String cpf;
+    private String rg;
     private String dataNascimento;
-    private String login;
-    private String senha;
 
-    /**
-     * @return the cpf
-     */
     public String getCpf() {
         return cpf;
     }
 
-    /**
-     * @param cpf the cpf to set
-     */
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    /**
-     * @return the nome
-     */
     public String getNome() {
         return nome;
     }
 
-    /**
-     * @param nome the nome to set
-     */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    /**
-     * @return the dataNascimento
-     */
     public String getDataNascimento() {
         return dataNascimento;
     }
 
-    /**
-     * @param dataNascimento the dataNascimento to set
-     */
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
-    public String getLogin() {
-        return login;
+    public String getRg() {
+        return rg;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setRg(String rg) {
+        this.rg = rg;
     }
 
-    public String getSenha() {
-        return senha;
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", rg='" + rg + '\'' +
+                ", dataNascimento='" + dataNascimento + '\'' +
+                '}';
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Cliente cliente = (Cliente) o;
+
+        return cpf != null ? cpf.equals(cliente.cpf) : cliente.cpf == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return cpf != null ? cpf.hashCode() : 0;
+    }
+
+    public Cliente(String nome, String cpf, String rg, String dataNascimento) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.dataNascimento = dataNascimento;
+    }
+
+    public Cliente() {
+        setId(proxId++);
     }
 }
