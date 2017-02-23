@@ -1,32 +1,55 @@
 package br.com.agostinho.sicredimobile.conta;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.agostinho.sicredimobile.cliente.Cliente;
 import br.com.agostinho.sicredimobile.util.AbstractDAO;
+import br.com.agostinho.sicredimobile.util.GenerateContas;
 
 /**
  * Created by agostinhooliv on 18/02/17.
  */
 
-public class ContaDAO implements AbstractDAO<Conta> {
+public class ContaDAO extends AbstractDAO<Conta, Integer> {
 
-    public static List<Conta> listaContas = new ArrayList<Conta>();
+    public Conta findOne(String conta, String senha) {
 
-    @Override
-    public Conta cadastrar(Conta conta) {
-        listaContas.add(conta);
-        return conta;
+        for (Conta c : super.getRepostorio()) {
+            if (c.getConta().equalsIgnoreCase(conta) && c.getSenha().equalsIgnoreCase(senha)) {
+                return c;
+            }
+        }
+
+        return null;
     }
 
-    @Override
-    public Conta deletar(Conta conta) {
-        listaContas.remove(conta);
-        return conta;
+    public Conta findOne(String conta) {
+
+        for (Conta c : super.getRepostorio()) {
+            if (c.getConta().equalsIgnoreCase(conta)) {
+                return c;
+            }
+        }
+
+        return null;
     }
 
-    @Override
-    public Conta atualizar(Conta conta) {
-        return conta;
+    public ContaDAO(){
+        Cliente cliente = new Cliente();
+        cliente.setNome("Allan Jefferson");
+        cliente.setRg("12345");
+        cliente.setCpf("12345");
+        cliente.setDataNascimento("020202");
+
+        Conta conta = new Conta();
+        conta.setConta("1");
+        conta.setSenha("asdf");
+        conta.setSaldo(100);
+        conta.setTitular(cliente);
+
+        super.getRepostorio().add(conta);
     }
 }
