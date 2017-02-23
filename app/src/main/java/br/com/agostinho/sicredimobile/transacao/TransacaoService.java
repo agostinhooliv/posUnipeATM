@@ -1,6 +1,7 @@
 package br.com.agostinho.sicredimobile.transacao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import br.com.agostinho.sicredimobile.conta.Conta;
@@ -18,9 +19,10 @@ public class TransacaoService extends AbstractService<TransacaoDAO, Transacao, I
         super(dao);
     }
 
-    public List<Transacao> consultarExtrato(Conta conta){
+    public TransacaoService(){}
 
-        return null;
+    public List<Transacao> consultarExtrato(Conta conta){
+        return super.findAll();
     }
 
     public Double consultarSaldo(Conta conta){
@@ -30,7 +32,7 @@ public class TransacaoService extends AbstractService<TransacaoDAO, Transacao, I
     public void depositar(Conta conta, Double valor){
         conta.setSaldo(conta.getSaldo() + valor);
 
-        Transacao transacao = new Transacao(valor, TipoTransacao.DEPOSITO, conta);
+        Transacao transacao = new Transacao(valor, TipoTransacao.DEPOSITO, conta, new Date());
         super.add(transacao);
     }
 
@@ -44,7 +46,7 @@ public class TransacaoService extends AbstractService<TransacaoDAO, Transacao, I
     public void sacar(Conta conta, Double valor){
         conta.setSaldo(conta.getSaldo() - valor);
 
-        Transacao transacao = new Transacao(valor, TipoTransacao.SAQUE, conta);
+        Transacao transacao = new Transacao(valor, TipoTransacao.SAQUE, conta, new Date());
         super.add(transacao);
     }
 
@@ -52,7 +54,15 @@ public class TransacaoService extends AbstractService<TransacaoDAO, Transacao, I
         contaOrigem.setSaldo(contaOrigem.getSaldo() - valor);
         contaDestino.setSaldo(contaDestino.getSaldo() + valor);
 
-        Transacao transacao = new Transacao(valor, TipoTransacao.TRANSFERENCIA, contaOrigem);
+        Transacao transacao = new Transacao(valor, TipoTransacao.TRANSFERENCIA, contaOrigem, new Date());
         super.add(transacao);
+    }
+
+    public void carregaTransacoesDefault(Conta conta){
+
+        this.sacar(conta, 100.00);
+        this.sacar(conta, 500.00);
+        this.depositar(conta, 5000.00);
+        this.sacar(conta, 100.00);
     }
 }
