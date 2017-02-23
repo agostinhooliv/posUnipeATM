@@ -65,13 +65,13 @@ public class LoginActivity extends BaseActivity {
                 if(!login.isEmpty() && !password.isEmpty()){
                     Conta conta = loginService.autenticar(login, password);
 
-                    if(conta != null){
+//                    if(conta != null){
                         Intent intent = new Intent(getContext(), PrincipalActivity.class);
                         startActivity(intent);
-                    }else{
-                        Toast toast = Toast.makeText(LoginActivity.this, "Usuario ou Senha Invalido!", Toast.LENGTH_SHORT);
-                        toast.show();
-                    }
+//                    }else{
+//                        Toast toast = Toast.makeText(LoginActivity.this, "Usuario ou Senha Invalido!", Toast.LENGTH_SHORT);
+//                        toast.show();
+//                    }
                 }
 
             }

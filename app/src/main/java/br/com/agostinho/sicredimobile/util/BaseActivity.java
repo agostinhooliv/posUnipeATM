@@ -1,6 +1,7 @@
 package br.com.agostinho.sicredimobile.util;
 
 
+import android.content.Context;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -44,6 +45,5 @@ public abstract class BaseActivity extends AppCompatActivity {
             }
         });
     }
-
 }
 
