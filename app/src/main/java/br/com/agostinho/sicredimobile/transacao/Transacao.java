@@ -1,5 +1,7 @@
 package br.com.agostinho.sicredimobile.transacao;
 
+import java.util.Date;
+
 import br.com.agostinho.sicredimobile.conta.Conta;
 import br.com.agostinho.sicredimobile.util.BaseEntity;
 
@@ -14,6 +16,7 @@ public class Transacao extends BaseEntity<Integer> {
     private double valor;
     private TipoTransacao tipoTransacao;
     private Conta conta;
+    private Date dataTransacao;
 
     public double getValor() {
         return valor;
@@ -29,6 +32,14 @@ public class Transacao extends BaseEntity<Integer> {
 
     public void setTipoTransacao(TipoTransacao tipoTransacao) {
         this.tipoTransacao = tipoTransacao;
+    }
+
+    public Date getDataTransacao() {
+        return dataTransacao;
+    }
+
+    public void setDataTransacao(Date dataTransacao) {
+        this.dataTransacao = dataTransacao;
     }
 
     public Conta getConta() {
@@ -48,9 +59,10 @@ public class Transacao extends BaseEntity<Integer> {
                 '}';
     }
 
-    public Transacao(double valor, TipoTransacao tipoTransacao, Conta conta) {
+    public Transacao(double valor, TipoTransacao tipoTransacao, Conta conta, Date dataTransacao) {
         this.valor = valor;
         this.tipoTransacao = tipoTransacao;
         this.conta = conta;
+        this.dataTransacao = dataTransacao;
     }
 }

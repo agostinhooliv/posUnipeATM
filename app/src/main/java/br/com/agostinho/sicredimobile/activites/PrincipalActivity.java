@@ -59,7 +59,10 @@ public class PrincipalActivity extends BaseActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PrincipalActivity.this, ExtratoActivity.class));
+                Intent intent = new Intent(getContext(), ExtratoActivity.class);
+                Conta conta = (Conta) getIntent().getExtras().getSerializable("conta");
+                intent.putExtra("conta", conta);
+                startActivity(intent);
             }
         };
     }

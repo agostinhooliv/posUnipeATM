@@ -1,6 +1,7 @@
 package br.com.agostinho.sicredimobile.util;
 
 import java.io.Serializable;
+import java.util.List;
 
 import br.com.agostinho.sicredimobile.conta.Conta;
 import br.com.agostinho.sicredimobile.conta.ContaDAO;
@@ -24,6 +25,10 @@ public abstract class AbstractService<DAO extends AbstractDAO<Entity, PK>, Entit
         dao.update(entity);
     }
 
+    public List<Entity> findAll(){
+        return dao.findAll();
+    }
+
     public Entity findContaById(PK pk) {
         Entity query = dao.findById(pk);
         return query;
@@ -36,6 +41,8 @@ public abstract class AbstractService<DAO extends AbstractDAO<Entity, PK>, Entit
     public AbstractService(DAO dao) {
         this.dao = dao;
     }
+
+    public AbstractService(){}
 
 
 }
