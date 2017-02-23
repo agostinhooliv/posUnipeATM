@@ -1,4 +1,4 @@
-package br.com.agostinho.sicredimobile.conta;
+package br.com.agostinho.sicredimobile.activites;
 
 import android.os.Bundle;
 

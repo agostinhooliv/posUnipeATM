@@ -1,4 +1,4 @@
-package br.com.agostinho.sicredimobile.usuario;
+package br.com.agostinho.sicredimobile.cliente;
 
 import java.util.ArrayList;
 import java.util.List;

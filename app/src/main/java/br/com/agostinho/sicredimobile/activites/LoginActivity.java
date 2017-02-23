@@ -1,4 +1,4 @@
-package br.com.agostinho.sicredimobile.login;
+package br.com.agostinho.sicredimobile.activites;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,16 +9,17 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.agostinho.sicredimobile.R;
-import br.com.agostinho.sicredimobile.conta.NovaContaActivity;
-import br.com.agostinho.sicredimobile.conta.EsqueceuSenhaActivity;
+import br.com.agostinho.sicredimobile.activites.NovaContaActivity;
+import br.com.agostinho.sicredimobile.activites.EsqueceuSenhaActivity;
+import br.com.agostinho.sicredimobile.login.LoginService;
 import br.com.agostinho.sicredimobile.main.PrincipalActivity;
-import br.com.agostinho.sicredimobile.usuario.Cliente;
+import br.com.agostinho.sicredimobile.cliente.Cliente;
 import br.com.agostinho.sicredimobile.util.BaseActivity;
+import br.com.agostinho.sicredimobile.util.BaseApplication;
 
 public class LoginActivity extends BaseActivity {
 
-    private EditText campoLogin;
-    private EditText campoSenha;
+    private ViewHolder viewHolder;
     private Button botaoLogin;
     private Cliente cliente = new Cliente();
 
@@ -27,10 +28,16 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        EditText edtLogin = (EditText) findViewById(R.id.edt_login_usuario);
+        EditText edtPassword = (EditText) findViewById(R.id.edt_login_password);
+
+        this.viewHolder = new ViewHolder(edtLogin, edtPassword);
+
         findViewById(R.id.btn_login_login).setOnClickListener(getHandleLogin());
         findViewById(R.id.lbl_login_novo_usuario).setOnClickListener(getHandleNovoUsuario());
         findViewById(R.id.lbl_login_esqueci_minha_senha).setOnClickListener(getHandleEsqueciSenha());
     }
+
 
 
 
@@ -48,6 +55,15 @@ public class LoginActivity extends BaseActivity {
 
             @Override
             public void onClick(View v) {
+                LoginService loginService = BaseApplication.getLoginService();
+
+                String login = viewHolder.campoLogin.getText().toString();
+                String password = viewHolder.campoSenha.getText().toString();
+
+                if(!login.isEmpty() && !password.isEmpty()){
+
+                }
+
                 Intent intent = new Intent(getContext(), PrincipalActivity.class);
                 startActivity(intent);
             }
@@ -73,5 +89,15 @@ public class LoginActivity extends BaseActivity {
                 startActivity(intent);
             }
         };
+    }
+
+    static class ViewHolder{
+        public EditText campoLogin;
+        public EditText campoSenha;
+
+        public ViewHolder(EditText campoLogin, EditText campoSenha) {
+            this.campoLogin = campoLogin;
+            this.campoSenha = campoSenha;
+        }
     }
 }
