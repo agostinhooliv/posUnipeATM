@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by breno on 22/02/17.
  */
 
-public class BaseEntity<PK extends Serializable> {
+public class BaseEntity<PK extends Serializable>  implements Serializable{
 
     private PK id;
 

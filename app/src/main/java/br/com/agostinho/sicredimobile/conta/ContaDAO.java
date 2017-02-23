@@ -3,6 +3,7 @@ package br.com.agostinho.sicredimobile.conta;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import br.com.agostinho.sicredimobile.cliente.Cliente;
@@ -41,17 +42,12 @@ public class ContaDAO extends AbstractDAO<Conta, Integer> {
     }
 
     public ContaDAO(){
-        Cliente cliente = new Cliente();
-        cliente.setNome("Allan Jefferson");
-        cliente.setRg("12345");
-        cliente.setCpf("12345");
-        cliente.setDataNascimento("020202");
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(1987, 12, 25);
+        Cliente cliente = new Cliente("Allan Jefferson", "12345", "12345", calendar.getTime());
 
-        Conta conta = new Conta();
-        conta.setConta("1");
-        conta.setSenha("asdf");
-        conta.setSaldo(100);
-        conta.setTitular(cliente);
+        calendar.set(2020, 12, 31);
+        Conta conta = new Conta(1000.00, 1000.00, 23.99, 33.88, calendar.getTime(), cliente, "asdf");
 
         super.getRepostorio().add(conta);
     }

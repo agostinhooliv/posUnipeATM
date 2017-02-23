@@ -32,8 +32,8 @@ public class GenerateCliente {
         return clientes;
     }
 
-    private static String generateDataNascimento() {
-        return new Date().toString();
+    private static Date generateDataNascimento() {
+        return new Date();
     }
 
     private static String generateRg() {

@@ -17,8 +17,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="5"
+            android:layout_height="53dp"
             android:gravity="center_vertical|center_horizontal"
             android:text="SALDO CONTA CORRENTE"
             android:textSize="16dp"
@@ -26,12 +25,12 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="5"
+            android:layout_height="36dp"
             android:gravity="center_vertical|center_horizontal"
-            android:text="8488474-x"
+            android:text="33333-x"
             android:textSize="14dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:id="@+id/valorNumeroContaCorrenteId" />
 
         <TableLayout
             android:layout_width="match_parent"
@@ -52,8 +51,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="130dp"
-                    android:text="R$ 1.000,00" />
+                    android:layout_marginLeft="120dp"
+                    android:text="R$ 1.000,00"
+                    android:id="@+id/valorSaldoId" />
             </TableRow>
 
             <TableRow
@@ -68,8 +68,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="130dp"
-                    android:text="R$ 1.000,00" />
+                    android:layout_marginLeft="120dp"
+                    android:text="R$ 1.000,00"
+                    android:id="@+id/valorChequeEspecialId" />
             </TableRow>
 
             <TableRow
@@ -84,12 +85,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="130dp"
-                    android:text="R$ 1.000,00" />
+                    android:layout_marginLeft="120dp"
+                    android:text="R$ 1.000,00"
+                    android:id="@+id/valorDisponivelId" />
             </TableRow>
 
             <TableRow
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:padding="5dp">
 
                 <TextView
@@ -100,13 +102,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="150dp"
+                    android:layout_marginLeft="140dp"
                     android:text="R$ 10,00"
-                    android:textColor="#8B0000" />
+                    android:textColor="#8B0000"
+                    android:id="@+id/valorIOFId" />
             </TableRow>
 
             <TableRow
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:padding="5dp">
 
                 <TextView
@@ -117,9 +120,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="150dp"
+                    android:layout_marginLeft="140dp"
                     android:text="R$ 10,00"
-                    android:textColor="#8B0000" />
+                    android:textColor="#8B0000"
+                    android:id="@+id/valorJurosId" />
             </TableRow>
 
             <TableRow
@@ -134,8 +138,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="128dp"
-                    android:text="31/01/2020" />
+                    android:layout_marginLeft="100dp"
+                    android:text="31/01/2020"
+                    android:id="@+id/valorVencimentoId" />
             </TableRow>
         </TableLayout>
     </LinearLayout>

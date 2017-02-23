@@ -1,10 +1,12 @@
 package br.com.agostinho.sicredimobile.activites;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import br.com.agostinho.sicredimobile.R;
+import br.com.agostinho.sicredimobile.conta.Conta;
 import br.com.agostinho.sicredimobile.util.BaseActivity;
 
 
@@ -30,7 +32,12 @@ public class PrincipalActivity extends BaseActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PrincipalActivity.this, SaldoActivity.class));
+
+                Intent intent = new Intent(getContext(), SaldoActivity.class);
+                Conta conta = (Conta) getIntent().getExtras().getSerializable("conta");
+                intent.putExtra("conta", conta);
+                startActivity(intent);
+
             }
         };
     }
@@ -76,5 +83,9 @@ public class PrincipalActivity extends BaseActivity {
                 startActivity(new Intent(PrincipalActivity.this, TransferenciaActivity.class));
             }
         };
+    }
+
+    private Context getContext() {
+        return this;
     }
 }

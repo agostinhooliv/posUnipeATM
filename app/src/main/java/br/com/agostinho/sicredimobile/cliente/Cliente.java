@@ -1,5 +1,7 @@
 package br.com.agostinho.sicredimobile.cliente;
 
+import java.util.Date;
+
 import br.com.agostinho.sicredimobile.util.BaseEntity;
 
 /**
@@ -12,7 +14,7 @@ public class Cliente extends BaseEntity<Integer> {
     private String nome;
     private String cpf;
     private String rg;
-    private String dataNascimento;
+    private Date dataNascimento;
 
     public String getCpf() {
         return cpf;
@@ -30,11 +32,11 @@ public class Cliente extends BaseEntity<Integer> {
         this.nome = nome;
     }
 
-    public String getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(String dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -72,7 +74,7 @@ public class Cliente extends BaseEntity<Integer> {
         return cpf != null ? cpf.hashCode() : 0;
     }
 
-    public Cliente(String nome, String cpf, String rg, String dataNascimento) {
+    public Cliente(String nome, String cpf, String rg, Date dataNascimento) {
         this.nome = nome;
         this.cpf = cpf;
         this.rg = rg;

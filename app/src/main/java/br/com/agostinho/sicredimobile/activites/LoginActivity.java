@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import br.com.agostinho.sicredimobile.R;
 import br.com.agostinho.sicredimobile.conta.Conta;
+import br.com.agostinho.sicredimobile.conta.ContaDAO;
 import br.com.agostinho.sicredimobile.login.LoginService;
 import br.com.agostinho.sicredimobile.cliente.Cliente;
 import br.com.agostinho.sicredimobile.util.BaseActivity;
@@ -38,8 +39,6 @@ public class LoginActivity extends BaseActivity {
     }
 
 
-
-
     private Context getContext() {
         return this;
     }
@@ -49,7 +48,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     /* Handles */
-    View.OnClickListener getHandleLogin(){
+    View.OnClickListener getHandleLogin() {
         return new View.OnClickListener() {
 
             @Override
@@ -62,16 +61,17 @@ public class LoginActivity extends BaseActivity {
                 Log.i("LoginActivity", login);
                 Log.i("LoginActivity", password);
 
-                if(!login.isEmpty() && !password.isEmpty()){
+                if (!login.isEmpty() && !password.isEmpty()) {
                     Conta conta = loginService.autenticar(login, password);
 
-//                    if(conta != null){
+                    if (conta != null) {
                         Intent intent = new Intent(getContext(), PrincipalActivity.class);
+                        intent.putExtra("conta", conta);
                         startActivity(intent);
-//                    }else{
-//                        Toast toast = Toast.makeText(LoginActivity.this, "Usuario ou Senha Invalido!", Toast.LENGTH_SHORT);
-//                        toast.show();
-//                    }
+                    } else {
+                        Toast toast = Toast.makeText(LoginActivity.this, "Usuario ou Senha Invalido!", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
                 }
 
             }
@@ -99,7 +99,7 @@ public class LoginActivity extends BaseActivity {
         };
     }
 
-    static class ViewHolder{
+    static class ViewHolder {
         public EditText campoLogin;
         public EditText campoSenha;
 
