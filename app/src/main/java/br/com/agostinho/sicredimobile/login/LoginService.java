@@ -14,7 +14,7 @@ import br.com.agostinho.sicredimobile.util.BaseApplication;
 public class LoginService {
 
     private ContaService contaService = BaseApplication.getInstance().getContaService();
-    private static Conta contaLogada = null;
+    private Conta contaLogada = null;
 
     /**
      * Metodo responsavel por autenticar uma conta de usuario.
@@ -33,6 +33,14 @@ public class LoginService {
         }
 
         return conta;
+    }
+
+    /** Retorna a conta logada
+     *
+     * @return
+     */
+    public Conta getContaLogada() {
+        return contaLogada;
     }
 
     /**

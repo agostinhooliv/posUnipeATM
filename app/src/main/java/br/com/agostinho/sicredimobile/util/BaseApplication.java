@@ -7,6 +7,7 @@ import br.com.agostinho.sicredimobile.cliente.ClienteDAO;
 import br.com.agostinho.sicredimobile.conta.ContaDAO;
 import br.com.agostinho.sicredimobile.conta.ContaService;
 import br.com.agostinho.sicredimobile.login.LoginService;
+import br.com.agostinho.sicredimobile.transacao.TransacaoDAO;
 import br.com.agostinho.sicredimobile.transacao.TransacaoService;
 import br.com.agostinho.sicredimobile.cliente.ClienteService;
 
@@ -51,7 +52,7 @@ public class BaseApplication extends Application {
 
     public static TransacaoService getTransacaoService() {
         if (transacaoService == null) {
-            transacaoService = new TransacaoService();
+            transacaoService = new TransacaoService(new TransacaoDAO());
         }
 
         return transacaoService;

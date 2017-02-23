@@ -20,4 +20,9 @@ public class ContaService extends AbstractService<ContaDAO, Conta, Integer> {
         return busca;
     }
 
+    public Conta findConta(String conta) {
+        ContaDAO contaDAO = super.getDao();
+        Conta busca = contaDAO.findOne(conta);
+        return busca;
+    }
 }

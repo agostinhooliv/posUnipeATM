@@ -36,4 +36,6 @@ public abstract class AbstractService<DAO extends AbstractDAO<Entity, PK>, Entit
     public AbstractService(DAO dao) {
         this.dao = dao;
     }
+
+
 }

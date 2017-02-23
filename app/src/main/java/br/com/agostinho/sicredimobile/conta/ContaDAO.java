@@ -27,12 +27,15 @@ public class ContaDAO extends AbstractDAO<Conta, Integer> {
     }
 
     public Conta findOne(String conta) {
+        List<Conta> repostorio = super.getRepostorio();
 
-        for (Conta c : super.getRepostorio()) {
+        for(int i = 0; i < repostorio.size(); i++){
+            Conta c = repostorio.get(i);
             if (c.getConta().equalsIgnoreCase(conta)) {
                 return c;
             }
         }
+
 
         return null;
     }
