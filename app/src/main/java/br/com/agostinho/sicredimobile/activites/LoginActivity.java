@@ -3,16 +3,15 @@ package br.com.agostinho.sicredimobile.activites;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.agostinho.sicredimobile.R;
-import br.com.agostinho.sicredimobile.activites.NovaContaActivity;
-import br.com.agostinho.sicredimobile.activites.EsqueceuSenhaActivity;
+import br.com.agostinho.sicredimobile.conta.Conta;
 import br.com.agostinho.sicredimobile.login.LoginService;
-import br.com.agostinho.sicredimobile.main.PrincipalActivity;
 import br.com.agostinho.sicredimobile.cliente.Cliente;
 import br.com.agostinho.sicredimobile.util.BaseActivity;
 import br.com.agostinho.sicredimobile.util.BaseApplication;
@@ -28,7 +27,7 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        EditText edtLogin = (EditText) findViewById(R.id.edt_login_usuario);
+        EditText edtLogin = (EditText) findViewById(R.id.edt_login_conta);
         EditText edtPassword = (EditText) findViewById(R.id.edt_login_password);
 
         this.viewHolder = new ViewHolder(edtLogin, edtPassword);
@@ -55,17 +54,26 @@ public class LoginActivity extends BaseActivity {
 
             @Override
             public void onClick(View v) {
-                LoginService loginService = BaseApplication.getLoginService();
+                LoginService loginService = BaseApplication.getInstance().getLoginService();
 
                 String login = viewHolder.campoLogin.getText().toString();
                 String password = viewHolder.campoSenha.getText().toString();
 
-                if(!login.isEmpty() && !password.isEmpty()){
+                Log.i("LoginActivity", login);
+                Log.i("LoginActivity", password);
 
+                if(!login.isEmpty() && !password.isEmpty()){
+                    Conta conta = loginService.autenticar(login, password);
+
+                    if(conta != null){
+                        Intent intent = new Intent(getContext(), PrincipalActivity.class);
+                        startActivity(intent);
+                    }else{
+                        Toast toast = Toast.makeText(LoginActivity.this, "Usuario ou Senha Invalido!", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
                 }
 
-                Intent intent = new Intent(getContext(), PrincipalActivity.class);
-                startActivity(intent);
             }
         };
     }

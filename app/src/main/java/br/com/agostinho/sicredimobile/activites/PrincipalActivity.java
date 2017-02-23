@@ -5,11 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import br.com.agostinho.sicredimobile.R;
-import br.com.agostinho.sicredimobile.transacao.DepositoActivity;
-import br.com.agostinho.sicredimobile.transacao.ExtratoActivity;
-import br.com.agostinho.sicredimobile.transacao.SaldoActivity;
-import br.com.agostinho.sicredimobile.transacao.SaqueActivity;
-import br.com.agostinho.sicredimobile.transacao.TransferenciaActivity;
 import br.com.agostinho.sicredimobile.util.BaseActivity;
 
 

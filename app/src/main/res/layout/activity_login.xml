@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="br.com.agostinho.sicredimobile.main.PrincipalActivity"
+    tools:context="br.com.agostinho.sicredimobile.activites.PrincipalActivity"
     android:weightSum="1">
 
 
@@ -30,15 +30,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Usuario"
+            android:text="Conta"
             android:textSize="20dp"
             android:paddingTop="10dp"
-            android:id="@+id/lbl_login_usuario"/>
+            android:id="@+id/lbl_login_conta"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/edt_login_usuario"/>
+            android:id="@+id/edt_login_conta"/>
 
         <TextView
             android:layout_width="match_parent"
