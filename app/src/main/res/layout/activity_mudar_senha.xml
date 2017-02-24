@@ -19,7 +19,7 @@
             android:layout_height="match_parent"
             android:layout_weight="5"
             android:gravity="center_vertical|center_horizontal"
-            android:text="Informe os dados"
+            android:text="Informe a nova senha"
             android:textSize="16dp" />
 
         <TableLayout
@@ -34,13 +34,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Conta:" />
+                    android:text="Senha:" />
 
                 <EditText
+                    android:id="@+id/valorSenha1d"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_span="2"
-                    android:id="@+id/valorContaId" />
+                    android:inputType="textPassword"
+                    android:layout_span="2" />
 
             </TableRow>
 
@@ -49,29 +50,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CPF:" />
+                    android:text="Confirme:" />
 
                 <EditText
+                    android:id="@+id/valorSenha2d"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_span="2"
-                    android:id="@+id/valorCPFId" />
-
-            </TableRow>
-
-            <TableRow android:padding="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="date"
-                    android:text="Data Nascimento:" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_span="2"
-                    android:id="@+id/valorDataNascimentoId" />
+                    android:inputType="textPassword"
+                    android:layout_span="2" />
 
             </TableRow>
 
@@ -81,8 +67,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_span="4"
-                    android:text="Verificar"
-                    android:id="@+id/botaoVerificarId" />
+                    android:text="Mudar senha"
+                    android:id="@+id/botaoMudarId" />
 
             </TableRow>
         </TableLayout>

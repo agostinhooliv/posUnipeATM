@@ -2,8 +2,10 @@ package br.com.agostinho.sicredimobile.conta;
 
 import android.util.Log;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import br.com.agostinho.sicredimobile.cliente.Cliente;
@@ -18,6 +20,8 @@ import br.com.agostinho.sicredimobile.util.GenerateContas;
 
 public class ContaDAO extends AbstractDAO<Conta, Integer> {
 
+    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("ddMMyyyy");
+
     public Conta findOne(String conta, String senha) {
 
         for (Conta c : super.getRepostorio()) {
@@ -29,21 +33,42 @@ public class ContaDAO extends AbstractDAO<Conta, Integer> {
         return null;
     }
 
+    public Conta findOne(String conta, String cpf, String dataNascimento) {
+
+        String data1 = null;
+
+        for (Conta c : super.getRepostorio()) {
+            data1 = simpleDateFormat.format(c.getTitular().getDataNascimento());
+            if (c.getConta().equalsIgnoreCase(conta) && c.getTitular().getCpf().equalsIgnoreCase(cpf) && (data1.equals(dataNascimento))) {
+                return c;
+            }
+        }
+
+        return null;
+    }
+
     public Conta findOne(String conta) {
         List<Conta> repostorio = super.getRepostorio();
 
-        for(int i = 0; i < repostorio.size(); i++){
+        for (int i = 0; i < repostorio.size(); i++) {
             Conta c = repostorio.get(i);
             if (c.getConta().equalsIgnoreCase(conta)) {
                 return c;
             }
         }
 
-
         return null;
     }
 
-    public ContaDAO(){
+    public void modificaSenha(String conta, String novaSenha) {
+        Conta busca = this.findOne(conta);
+        if (busca != null) {
+            busca.setSenha(novaSenha);
+        }
+    }
+
+
+    public ContaDAO() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(1987, 12, 25);
         Cliente cliente = new Cliente("Allan Jefferson", "12345", "12345", calendar.getTime());
@@ -58,7 +83,6 @@ public class ContaDAO extends AbstractDAO<Conta, Integer> {
 
         calendar.set(2030, 9, 01);
         Conta conta2 = new Conta(1000.00, 1000.00, 0.00, 1.88, calendar.getTime(), cliente2, "qwer");
-        System.out.println("Conta2: " +conta2.getConta());
 
         super.getRepostorio().add(conta2);
     }

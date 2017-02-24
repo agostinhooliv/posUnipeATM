@@ -16,6 +16,8 @@ import java.util.Locale;
 import br.com.agostinho.sicredimobile.R;
 import br.com.agostinho.sicredimobile.conta.Conta;
 import br.com.agostinho.sicredimobile.login.LoginService;
+import br.com.agostinho.sicredimobile.transacao.TransacaoDAO;
+import br.com.agostinho.sicredimobile.transacao.TransacaoService;
 import br.com.agostinho.sicredimobile.util.BaseActivity;
 
 
@@ -30,7 +32,7 @@ public class SaldoActivity extends BaseActivity {
     private TextView vencimentoChequeEspecial;
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
     private DecimalFormat decimalFormat = new DecimalFormat("##,###,###,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
-    private LoginService loginService = new LoginService();
+    private TransacaoService transacaoService = new TransacaoService(new TransacaoDAO());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +48,12 @@ public class SaldoActivity extends BaseActivity {
 
         Intent intent = getIntent();
         Conta conta = (Conta) intent.getExtras().getSerializable("conta");
-//        Conta conta = loginService.getContaLogada();
 
         numeroContaCorrente = (TextView) findViewById(R.id.valorNumeroContaCorrenteId);
         numeroContaCorrente.setText(conta.getConta());
 
         saldoConta = (TextView) findViewById(R.id.valorSaldoId);
-        saldoConta.setText(String.valueOf(decimalFormat.format(conta.getSaldo())));
+        saldoConta.setText(String.valueOf(decimalFormat.format(transacaoService.consultarSaldo(conta))));
 
         chequeEspecial = (TextView) findViewById(R.id.valorChequeEspecialId);
         chequeEspecial.setText(String.valueOf(decimalFormat.format(conta.getChequeEspecial())));

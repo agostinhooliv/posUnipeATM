@@ -51,8 +51,6 @@ public class ExtratoActivity extends BaseActivity {
 
         List<String> listaTransacoes = new ArrayList<String>();
 
-        System.out.println("Conta: " +conta.getConta());
-
         for(Transacao transacao : transacaoService.consultarExtrato(conta)){
             listaTransacoes.add(transacao.getTipoTransacao() + " - " +decimalFormat.format(transacao.getValor()) +" - "+simpleDateFormat.format(transacao.getDataTransacao()));
         }
