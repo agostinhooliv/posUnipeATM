@@ -1,5 +1,6 @@
 package br.com.agostinho.sicredimobile.activites;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -63,7 +64,12 @@ public class DepositoActivity extends BaseActivity {
                 transacaoService.depositar(conta, parseValor);
                 Log.i("DepositoActivity","Saldo: "+ contaLogada.getSaldo());
 
-                onBackPressed();
+                Intent intent = new Intent(DepositoActivity.this, FeedbackActivity.class);
+                intent.putExtra("OPERACAO","DEPOSITO");
+                intent.putExtra("VALOR", valor);
+                intent.putExtra("CONTA", conta);
+
+                startActivity(intent);
 
             }
         };

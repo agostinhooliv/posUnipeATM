@@ -1,5 +1,6 @@
 package br.com.agostinho.sicredimobile.activites;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,7 +48,8 @@ public class TransferenciaActivity extends BaseActivity {
 
                 String contaOrigem = loginService.getContaLogada().getConta();
                 String contaDestino = campoConta.getText().toString();
-                Double valor = Double.parseDouble(campoValor.getText().toString());
+                String valor = campoValor.getText().toString();
+                Double parse = Double.parseDouble(valor);
 
                 Log.i(TAG, "Conta Fonte: " + loginService.getContaLogada().getConta());
                 Log.i(TAG, "Titular Conta Fonte: " + loginService.getContaLogada().getTitular().getNome());
@@ -55,7 +57,7 @@ public class TransferenciaActivity extends BaseActivity {
                 Log.i(TAG, "Conta Destino: " + campoConta.getText().toString());
                 Log.i(TAG, "Valor: " + campoValor.getText().toString());
 
-                transacaoService.transferir(contaOrigem, contaDestino, valor);
+                transacaoService.transferir(contaOrigem, contaDestino, parse);
 
                 ContaService contaService = BaseApplication.getInstance().getContaService();
                 Conta destino = contaService.findConta(contaDestino);
@@ -66,7 +68,13 @@ public class TransferenciaActivity extends BaseActivity {
                 Log.i(TAG, "Conta Destino: " + destino.getConta());
                 Log.i(TAG, "Saldo Conta Fonte: " + destino.getSaldo());
 
-                onBackPressed();
+                Intent intent = new Intent(TransferenciaActivity.this, FeedbackActivity.class);
+                intent.putExtra("OPERACAO","TRANSFERENCIA");
+                intent.putExtra("VALOR", valor);
+                intent.putExtra("CONTA", contaDestino);
+
+                startActivity(intent);
+                finish();
 
             }
         };

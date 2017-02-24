@@ -21,6 +21,7 @@ import br.com.agostinho.sicredimobile.transacao.Transacao;
 import br.com.agostinho.sicredimobile.transacao.TransacaoDAO;
 import br.com.agostinho.sicredimobile.transacao.TransacaoService;
 import br.com.agostinho.sicredimobile.util.BaseActivity;
+import br.com.agostinho.sicredimobile.util.BaseApplication;
 
 
 public class ExtratoActivity extends BaseActivity {
@@ -41,8 +42,7 @@ public class ExtratoActivity extends BaseActivity {
 
         ListView extrato = (ListView) findViewById(R.id.listaExtratoId);
 
-        Intent intent = getIntent();
-        Conta conta = (Conta) intent.getExtras().getSerializable("conta");
+        Conta conta = BaseApplication.getInstance().getLoginService().getContaLogada();
 
         numeroContaCorrente = (TextView) findViewById(R.id.valorNumeroContaCorrenteId);
         numeroContaCorrente.setText(conta.getConta());

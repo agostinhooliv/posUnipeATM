@@ -1,5 +1,6 @@
 package br.com.agostinho.sicredimobile.activites;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -49,7 +50,14 @@ public class SaqueActivity extends BaseActivity {
                 double parse = Double.parseDouble(valor);
 
                 transacaoService.sacar(conta, parse);
-                onBackPressed();
+
+                Intent intent = new Intent(SaqueActivity.this, FeedbackActivity.class);
+                intent.putExtra("OPERACAO","SAQUE");
+                intent.putExtra("VALOR", valor);
+                intent.putExtra("CONTA", conta);
+
+                startActivity(intent);
+
             }
         };
     }

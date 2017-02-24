@@ -73,14 +73,23 @@ public class TransacaoService extends AbstractService<TransacaoDAO, Transacao, I
         super.add(transacao);
     }
 
-    public void carregaTransacoesDefault(Conta conta){
+    public void transferir(String contaOrigem, String contaDestino, Double valor) {
+        ContaService contaService = BaseApplication.getInstance().getContaService();
+        Conta cOrigem = contaService.findConta(contaOrigem);
+        Conta cDestino = contaService.findConta(contaDestino);
 
-        Conta conta = new Conta("100");
+        this.transferir(cOrigem, cDestino, valor);
+    }
 
-        this.sacar(conta, 100.00);
-        this.sacar(conta, 500.00);
-        this.depositar(conta, 5000.00);
-        this.sacar(conta, 100.00);
+    public void carregaTransacoesDefault(){
+
+
+        Conta conta1 = new Conta("100");
+
+        this.sacar(conta1, 100.00);
+        this.sacar(conta1, 500.00);
+        this.depositar(conta1, 5000.00);
+        this.sacar(conta1, 100.00);
 
         Conta conta2 = new Conta("101");
         this.sacar(conta2, 30.00);
@@ -88,4 +97,5 @@ public class TransacaoService extends AbstractService<TransacaoDAO, Transacao, I
         this.depositar(conta2, 500.00);
         this.sacar(conta2, 100.00);
     }
+
 }
