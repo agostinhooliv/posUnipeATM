@@ -19,6 +19,7 @@ import br.com.agostinho.sicredimobile.login.LoginService;
 import br.com.agostinho.sicredimobile.transacao.TransacaoDAO;
 import br.com.agostinho.sicredimobile.transacao.TransacaoService;
 import br.com.agostinho.sicredimobile.util.BaseActivity;
+import br.com.agostinho.sicredimobile.util.BaseApplication;
 
 
 public class SaldoActivity extends BaseActivity {
@@ -46,9 +47,10 @@ public class SaldoActivity extends BaseActivity {
         decimalFormat.setMinimumFractionDigits(2);
         decimalFormat.setParseBigDecimal (true);
 
-        Intent intent = getIntent();
-        Conta conta = (Conta) intent.getExtras().getSerializable("conta");
+        //recupera conta logada
+        Conta conta = BaseApplication.getInstance().getLoginService().getContaLogada();
 
+        //configura os labels
         numeroContaCorrente = (TextView) findViewById(R.id.valorNumeroContaCorrenteId);
         numeroContaCorrente.setText(conta.getConta());
 

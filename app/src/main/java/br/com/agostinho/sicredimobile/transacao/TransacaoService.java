@@ -15,22 +15,21 @@ import br.com.agostinho.sicredimobile.util.BaseApplication;
 
 public class TransacaoService extends AbstractService<TransacaoDAO, Transacao, Integer> {
 
-    private List<Transacao> listaTransacoes = new ArrayList<Transacao>();
-
     public TransacaoService(TransacaoDAO dao) {
         super(dao);
     }
 
-    public TransacaoService() {
-    }
-
     public List<Transacao> consultarExtrato(Conta conta) {
-        listaTransacoes.clear();
-        for (Transacao transacao : super.findAll()) {
-            if (transacao.getConta().getConta().equals(conta.getConta()))
-                listaTransacoes.add(transacao);
+        List<Transacao> consulta = new ArrayList<Transacao>();
+        List<Transacao> transacoes = super.findAll();
+
+        for (Transacao transacao : transacoes) {
+            if (transacao.getConta().getConta().equalsIgnoreCase(conta.getConta())){
+                consulta.add(transacao);
+            }
         }
-        return listaTransacoes;
+
+        return consulta;
     }
 
     public Double consultarSaldo(Conta conta) {
@@ -58,7 +57,14 @@ public class TransacaoService extends AbstractService<TransacaoDAO, Transacao, I
         super.add(transacao);
     }
 
-    public void transferir(Conta contaOrigem, Conta contaDestino, Double valor) {
+    public void sacar(String conta, Double valor){
+        ContaService contaService = BaseApplication.getInstance().getContaService();
+        Conta busca = contaService.findConta(conta);
+
+        this.sacar(busca, valor);
+    }
+
+    public void transferir(Conta contaOrigem, Conta contaDestino, Double valor){
         contaOrigem.setSaldo(contaOrigem.getSaldo() - valor);
         contaDestino.setSaldo(contaDestino.getSaldo() + valor);
 
@@ -66,20 +72,12 @@ public class TransacaoService extends AbstractService<TransacaoDAO, Transacao, I
         super.add(transacao);
     }
 
-    //Carrega
-    public void carregaTransacoesDefault() {
+    public void transferir(String contaOrigem, String contaDestino, Double valor) {
+        ContaService contaService = BaseApplication.getInstance().getContaService();
+        Conta cOrigem = contaService.findConta(contaOrigem);
+        Conta cDestino = contaService.findConta(contaDestino);
 
-        Conta conta = new Conta("100");
-
-        this.sacar(conta, 100.00);
-        this.sacar(conta, 500.00);
-        this.depositar(conta, 5000.00);
-        this.sacar(conta, 100.00);
-
-        Conta conta2 = new Conta("101");
-        this.sacar(conta2, 30.00);
-        this.sacar(conta2, 200.00);
-        this.depositar(conta2, 500.00);
-        this.sacar(conta2, 100.00);
+        this.transferir(cOrigem, cDestino, valor);
     }
+
 }

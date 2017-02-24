@@ -110,7 +110,8 @@ public class Conta extends BaseEntity<Integer> implements Serializable {
     }
 
     public Conta(double saldo, double chequeEspecial, double chequeEspecialIOF, double chequeEspecialJuros, Date vencimentoChequeEspecial, Cliente titular, String senha) {
-        this.conta = String.valueOf(this.proxId++);
+        super.setId(this.proxId);
+        this.conta = String.valueOf(this.proxId);
         this.saldo = saldo;
         this.chequeEspecial = chequeEspecial;
         this.chequeEspecialIOF = chequeEspecialIOF;
@@ -118,12 +119,16 @@ public class Conta extends BaseEntity<Integer> implements Serializable {
         this.vencimentoChequeEspecial = vencimentoChequeEspecial;
         this.titular = titular;
         this.senha = senha;
-        super.setId(this.proxId);
+
+        //incrementa id para proxima conta
+        this.proxId += 1;
+
     }
 
     public Conta(String conta) {
         this.conta = conta;
     }
 
-    public Conta(){}
+    public Conta() {
+    }
 }

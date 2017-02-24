@@ -17,33 +17,28 @@ public class PrincipalActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        setUpToolbar();
-        setTitleToolbar("Sicredi Mobile");
+        //setUpToolbar();
+        //setTitleToolbar("Sicredi Mobile");
 
         // Configura os eventos
-        findViewById(R.id.layout_main_saldo).setOnClickListener(getHandleMainSaldo());
-        findViewById(R.id.layout_main_deposito).setOnClickListener(getHandleMainDeposito());
-        findViewById(R.id.layout_main_extrato).setOnClickListener(getHandleMainExtrato());
-        findViewById(R.id.layout_main_saque).setOnClickListener(getHandleMainSaque());
-        findViewById(R.id.layout_main_transferencia).setOnClickListener(getHandleMainTransferencia());
+        findViewById(R.id.layout_main_saldo).setOnClickListener(getHandleSaldo());
+        findViewById(R.id.layout_main_deposito).setOnClickListener(getHandleDeposito());
+        findViewById(R.id.layout_main_extrato).setOnClickListener(getHandleExtrato());
+        findViewById(R.id.layout_main_saque).setOnClickListener(getHandleSaque());
+        findViewById(R.id.layout_main_transferencia).setOnClickListener(getHandleTransferencia());
     }
 
-    private View.OnClickListener getHandleMainSaldo() {
+    private View.OnClickListener getHandleSaldo() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(getContext(), SaldoActivity.class);
-                Conta conta = (Conta) getIntent().getExtras().getSerializable("conta");
-                intent.putExtra("conta", conta);
-                startActivity(intent);
-
+                startActivity(new Intent(getContext(), SaldoActivity.class));
             }
         };
     }
 
 
-    private View.OnClickListener getHandleMainDeposito() {
+    private View.OnClickListener getHandleDeposito() {
         return new View.OnClickListener() {
 
             @Override
@@ -54,21 +49,18 @@ public class PrincipalActivity extends BaseActivity {
     }
 
 
-    public View.OnClickListener getHandleMainExtrato() {
+    public View.OnClickListener getHandleExtrato() {
         return new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), ExtratoActivity.class);
-                Conta conta = (Conta) getIntent().getExtras().getSerializable("conta");
-                intent.putExtra("conta", conta);
-                startActivity(intent);
+                startActivity(new Intent(getContext(), ExtratoActivity.class));
             }
         };
     }
 
 
-    public View.OnClickListener getHandleMainSaque() {
+    public View.OnClickListener getHandleSaque() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +70,7 @@ public class PrincipalActivity extends BaseActivity {
     }
 
 
-    public View.OnClickListener getHandleMainTransferencia() {
+    public View.OnClickListener getHandleTransferencia() {
         return new View.OnClickListener() {
 
             @Override
