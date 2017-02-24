@@ -27,7 +27,7 @@ import br.com.agostinho.sicredimobile.util.BaseApplication;
 public class ExtratoActivity extends BaseActivity {
 
     private TextView numeroContaCorrente;
-    private TransacaoService transacaoService = new TransacaoService(new TransacaoDAO());
+    private TransacaoService transacaoService = BaseApplication.getInstance().getTransacaoService();
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     private DecimalFormat decimalFormat = new DecimalFormat("##,###,###,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
 
@@ -40,25 +40,25 @@ public class ExtratoActivity extends BaseActivity {
         setTitleToolbar("Extrato");
         setDisplayHomeAsUpEnabled(true);
 
-        ListView extrato = (ListView) findViewById(R.id.listaExtratoId);
-
+        //configura labels
         Conta conta = BaseApplication.getInstance().getLoginService().getContaLogada();
-
         numeroContaCorrente = (TextView) findViewById(R.id.valorNumeroContaCorrenteId);
         numeroContaCorrente.setText(conta.getConta());
 
-        transacaoService.carregaTransacoesDefault();
-
+        //recupera o extrato
+        List<Transacao> transacoes = transacaoService.consultarExtrato(conta);
         List<String> listaTransacoes = new ArrayList<String>();
 
-        for(Transacao transacao : transacaoService.consultarExtrato(conta)){
+        for(Transacao transacao : transacoes){
             listaTransacoes.add(transacao.getTipoTransacao() + " - " +decimalFormat.format(transacao.getValor()) +" - "+simpleDateFormat.format(transacao.getDataTransacao()));
         }
 
+        //preenche o listview
+        ListView listView = (ListView) findViewById(R.id.listaExtratoId);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
                 android.R.layout.simple_list_item_1, android.R.id.text1 ,listaTransacoes);
 
-        extrato.setAdapter(adapter);
+        listView.setAdapter(adapter);
     }
 
     private Context getContext() {

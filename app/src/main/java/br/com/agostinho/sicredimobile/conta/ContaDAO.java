@@ -67,28 +67,7 @@ public class ContaDAO extends AbstractDAO<Conta, Integer> {
         }
     }
 
+    public ContaDAO() {
 
-    public ContaDAO(){
-        //Conta 100
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(1987, 12, 25);
-        Cliente cliente = new Cliente("Allan Jefferson", "12345", "12345", calendar.getTime());
-
-        calendar.set(2020, 12, 31);
-        Conta conta = new Conta(1000.00, 1000.00, 23.99, 33.88, calendar.getTime(), cliente, "asdf");
-        super.getRepostorio().add(conta);
-
-        //Conta 101
-        cliente = new Cliente("Ricardo Sá", "23456", "23456", calendar.getTime());
-        conta = new Conta(1000.00, 1000.00, 23.99, 33.88, calendar.getTime(), cliente, "qwert");
-        super.getRepostorio().add(conta);
-
-        calendar.set(1960, 01, 01);
-        Cliente cliente2 = new Cliente("João da Silva", "54321", "54321", calendar.getTime());
-
-        calendar.set(2030, 9, 01);
-        Conta conta2 = new Conta(1000.00, 1000.00, 0.00, 1.88, calendar.getTime(), cliente2, "qwer");
-
-        super.getRepostorio().add(conta2);
     }
 }
