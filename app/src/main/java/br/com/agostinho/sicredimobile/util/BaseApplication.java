@@ -45,12 +45,11 @@ public class BaseApplication extends Application {
     public void preencheContasDefault(){
         ContaService contaService = getInstance().getContaService();
 
-        //Conta 100
         Calendar calendar = Calendar.getInstance();
-
         calendar.set(1987, 12, 25);
-        Cliente cliente = new Cliente("Allan Jefferson", "12345", "12345", calendar.getTime());
 
+        //Conta 100
+        Cliente cliente = new Cliente("Allan Jefferson", "12345", "12345", calendar.getTime());
         calendar.set(2020, 12, 31);
         Conta conta = new Conta(0.00, 1000.00, 23.99, 33.88, calendar.getTime(), cliente, "asdf");
         contaService.add(conta);
