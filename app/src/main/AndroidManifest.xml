@@ -23,7 +23,8 @@
         <activity android:name=".activites.DepositoActivity" />
         <activity android:name=".activites.SaqueActivity" />
         <activity android:name=".activites.TransferenciaActivity" />
-        <activity android:name=".activites.EsqueceuSenhaActivity"></activity>
+        <activity android:name=".activites.EsqueceuSenhaActivity" />
+        <activity android:name=".activites.MudarSenhaActivity"></activity>
     </application>
 
 </manifest>

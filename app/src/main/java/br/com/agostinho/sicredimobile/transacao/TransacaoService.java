@@ -13,37 +13,45 @@ import br.com.agostinho.sicredimobile.util.BaseApplication;
  * Created by agostinhooliv on 18/02/17.
  */
 
-public class TransacaoService extends AbstractService<TransacaoDAO, Transacao, Integer>{
+public class TransacaoService extends AbstractService<TransacaoDAO, Transacao, Integer> {
+
+    private List<Transacao> listaTransacoes = new ArrayList<Transacao>();
 
     public TransacaoService(TransacaoDAO dao) {
         super(dao);
     }
 
-    public TransacaoService(){}
-
-    public List<Transacao> consultarExtrato(Conta conta){
-        return super.findAll();
+    public TransacaoService() {
     }
 
-    public Double consultarSaldo(Conta conta){
+    public List<Transacao> consultarExtrato(Conta conta) {
+        listaTransacoes.clear();
+        for (Transacao transacao : super.findAll()) {
+            if (transacao.getConta().getConta().equals(conta.getConta()))
+                listaTransacoes.add(transacao);
+        }
+        return listaTransacoes;
+    }
+
+    public Double consultarSaldo(Conta conta) {
         return conta.getSaldo();
     }
 
-    public void depositar(Conta conta, Double valor){
+    public void depositar(Conta conta, Double valor) {
         conta.setSaldo(conta.getSaldo() + valor);
 
         Transacao transacao = new Transacao(valor, TipoTransacao.DEPOSITO, conta, new Date());
         super.add(transacao);
     }
 
-    public void depositar(String conta, double valor){
+    public void depositar(String conta, double valor) {
         ContaService contaService = BaseApplication.getInstance().getContaService();
         Conta busca = contaService.findConta(conta);
 
         this.depositar(busca, valor);
     }
 
-    public void sacar(Conta conta, Double valor){
+    public void sacar(Conta conta, Double valor) {
         conta.setSaldo(conta.getSaldo() - valor);
 
         Transacao transacao = new Transacao(valor, TipoTransacao.SAQUE, conta, new Date());
@@ -65,19 +73,19 @@ public class TransacaoService extends AbstractService<TransacaoDAO, Transacao, I
         super.add(transacao);
     }
 
-    public void transferir(String contaOrigem, String contaDestino, Double valor){
-        ContaService contaService = BaseApplication.getInstance().getContaService();
-        Conta cOrigem = contaService.findConta(contaOrigem);
-        Conta cDestino = contaService.findConta(contaDestino);
-
-        this.transferir(cOrigem, cDestino, valor);
-    }
-
     public void carregaTransacoesDefault(Conta conta){
+
+        Conta conta = new Conta("100");
 
         this.sacar(conta, 100.00);
         this.sacar(conta, 500.00);
         this.depositar(conta, 5000.00);
         this.sacar(conta, 100.00);
+
+        Conta conta2 = new Conta("101");
+        this.sacar(conta2, 30.00);
+        this.sacar(conta2, 200.00);
+        this.depositar(conta2, 500.00);
+        this.sacar(conta2, 100.00);
     }
 }
