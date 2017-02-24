@@ -17,8 +17,8 @@ public class PrincipalActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        setUpToolbar();
-        setTitleToolbar("Sicredi Mobile");
+        //setUpToolbar();
+        //setTitleToolbar("Sicredi Mobile");
 
         // Configura os eventos
         findViewById(R.id.layout_main_saldo).setOnClickListener(getHandleSaldo());
