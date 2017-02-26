@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_formulario"
+    android:id="@+id/activity_nova_conta"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -16,7 +16,7 @@
         android:layout_margin="16dp">
 
         <TextView
-            android:id="@+id/lbl_formulario_usuario_novo_usuario"
+            android:id="@+id/lbl_novaconta_novo_usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Novo Usuario"
@@ -24,78 +24,77 @@
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/lbl_formulario_usuario_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:text="Email" />
-
-        <EditText
-            android:id="@+id/edt_formulario_usuario_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-        <TextView
-            android:id="@+id/lbl_formulario_usuario_senha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:text="Senha" />
-
-        <EditText
-            android:id="@+id/edt_formulario_usuario_senha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-        <TextView
-            android:id="@+id/lbl_formulario_usuario_nome"
+            android:id="@+id/lbl_novaconta_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="15dp"
             android:text="Nome" />
 
         <EditText
-            android:id="@+id/edt_formulario_usuario_nome"
+            android:id="@+id/edt_novaconta_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/lbl_formulario_usuario_cpf"
+            android:id="@+id/lbl_novaconta_cpf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="15dp"
             android:text="CPF" />
 
         <EditText
-            android:id="@+id/edt_formulario_usuario_cpf"
+            android:id="@+id/edt_novaconta_cpf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/lbl_formulario_usuario_telefone"
+            android:id="@+id/lbl_novaconta_rg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="15dp"
-            android:text="Telefone" />
+            android:text="RG" />
 
         <EditText
-            android:id="@+id/edt_formulario_usuario_telefone"
+            android:id="@+id/edt_novaconta_rg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName" />
 
+        <TextView
+            android:id="@+id/lbl_novaconta_data_nasc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:text="Data de Nascimento" />
+
+        <EditText
+            android:id="@+id/edt_novaconta_datanasc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/lbl_novaconta_senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:text="Senha" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/edt_novaconta_senha" />
 
         <Button
-            android:id="@+id/bnt_formulario_usuario_salvar"
+            android:id="@+id/bnt_novaconta_salvar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Salvar" />
